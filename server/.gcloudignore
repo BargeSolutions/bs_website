@@ -1,0 +1,9 @@
+# exclude node modules from upload
+/node_modules/
+
+# exclude client folder - copy to public folder after build
+/client/
+
+# exclude env and gitignore from upload
+.env
+.gitignore

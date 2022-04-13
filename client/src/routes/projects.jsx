@@ -28,15 +28,15 @@ function Projects() {
         
         const new_project = {
             projectName: inputs.projectName,
-            projectNumer: inputs.projectNumber,
+            projectNumber: inputs.projectNumber,
             projectClient: inputs.projectClient,
             projectNumberClient: inputs.projectNumberClient,
         }
 
         console.log(new_project);
 
-        axios.post('http://ptsv2.com/t/ibui8-1649414338/post', new_project, {
-            headers: "Access-Control-Allow-Origin",
+        axios.post(`/projects/add`, new_project, {
+            headers: {"Access-Control-Allow-Origin": "*"},
         })
             .then(res => console.log(res.data));
     }
