@@ -3,9 +3,9 @@
 }
 
 .user-form {
-  margin: 0;
+  margin-top: 250px;
   position: absolute;
-  top: 28%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

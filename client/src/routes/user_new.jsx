@@ -45,6 +45,7 @@ function User() {
             userFunction: inputs.userFunction,
             userTelephone: inputs.userTelephone,
             role: userRole,
+            allowed_projects: projects,
         }
 
         console.log(new_user)
@@ -54,6 +55,41 @@ function User() {
         })
             .then(res => console.log(res.data));
 
+    }
+
+    //testing check box with data
+    const all_projects = [
+        {
+            project_id: 17033,
+            project_name: "Liza Unity",
+        },
+        {
+            project_id: 17044,
+            project_name: "Prosperity",
+        },
+        {
+            project_id: 17022,
+            project_name: "Shell EA",
+        },
+        {
+            project_id: 18021,
+            project_name: "Djeno buoy",
+        },
+        {
+            project_id: 19025,
+            project_name: "Mero4"
+        },
+    ]
+
+    const [projects, setProjects] = useState([]);
+
+    const handleCheckChange = e => {
+        const {value, checked} = e.target;
+        if (checked) {
+            setProjects(prev => [...prev, value]);
+        } else {
+            setProjects(prev => prev.filter(x => x !== value));
+        }
     }
 
 
@@ -144,6 +180,19 @@ function User() {
                     <option value="Viewer">Viewer</option>
                     </Form.Select>
                 </Col>
+            </Form.Group>
+            <Form.Group>
+            {
+                all_projects.map((project) => 
+                    <Form.Check
+                        type="checkbox"
+                        key={project.project_id}
+                        name={project.project_id}
+                        value={project.project_id}
+                        label={project.project_name}
+                        onChange={handleCheckChange}>
+                    </Form.Check>)
+            }
             </Form.Group>
             <Button 
                 variant="secondary"
