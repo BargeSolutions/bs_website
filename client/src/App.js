@@ -1,20 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
 import NavigationBar from "./components/Navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from './assets/L_BargeSolutions.gif'
 
 
 function App() {
   return (
     <div>
-      <h1>Barge Solutions Web App</h1>
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
-        <NavigationBar />
-        <Link to="/projects">Projects</Link> | {" "}
-      </nav>
+      <NavigationBar />
       <Outlet />
     </div>
   );

@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import App from "./App";
 import Projects from "./routes/projects";
+import User from "./routes/user_new"
 
 const rootElement = document.getElementById("root");
 
@@ -19,6 +20,7 @@ root.render(
     <Routes>
     <Route path="/" element={<App />}>
     <Route path="projects" element={<Projects />} />
+    <Route path="user" element={<User />} />
     </Route>
     </Routes>
   </BrowserRouter>
